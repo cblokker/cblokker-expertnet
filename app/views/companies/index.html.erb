@@ -1,0 +1,9 @@
+<%= content_tag :div, nil, id: "state", data: {
+  state: {
+    companies: @companies.as_json(
+      methods: :full_photo_asset_path,
+      except: :photo_asset_path
+    )
+  }
+} %>
+<div id="react-app"></div>

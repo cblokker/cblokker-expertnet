@@ -1,0 +1,41 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "classes": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "quotes": ["error", "backtick"],
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "indent": ["error", 2, { "MemberExpression": 1, "SwitchCase": 1}]
+  },
+  "globals": {
+    "React": true,
+    "require": true,
+    "test": true,
+    "beforeEach": true,
+    "jest": true,
+    "afterEach": true,
+    "expect": true,
+    "process": true,
+    "module": true,
+    "describe": true
+  }
+}

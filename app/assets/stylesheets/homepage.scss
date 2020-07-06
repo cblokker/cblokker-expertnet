@@ -1,0 +1,17 @@
+.home-page {
+  .title {
+    color: #04c798;
+  }
+
+  .home-page-links {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .link-button {
+      margin: 20px 0;
+      padding: 25px 0;
+      width: 200px;
+    }
+  }
+}

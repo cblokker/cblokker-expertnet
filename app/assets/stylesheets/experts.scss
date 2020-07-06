@@ -1,0 +1,16 @@
+.experts-index {
+  .title {
+    color: #04c798;
+  }
+
+  .expert-row {
+    margin-top: 10px;
+  }
+
+  .expert-card {
+    .expert-img {
+      height: 15rem;
+      object-fit: cover;
+    }
+  }
+}

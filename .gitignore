@@ -1,0 +1,63 @@
+.idea
+.DS_Store
+.powenv
+.env
+.env.test
+.env.development
+db/*.sqlite3
+db/*.sqlite3*
+log/*
+log/*.log
+tmp/**/*
+tmp/*
+*.bak
+*~
+*.dat
+*.orig
+*.old
+solr/data/*
+solr/lib/*
+*.rdb
+config/initializers/password.rb
+*.swp
+.rvmrc
+.sass-cache
+chromedriver.log
+public/uploads/
+.rbenv-gemsets
+*.sublime-project
+*.sublime-workspace
+exports/*
+.tddium*
+stats.txt
+.jhw-cache/*
+spec/support/uploads/*
+.powrc
+.rspec-local
+coverage/*
+rspec.xml
+.byebug_history
+/experts_development
+/experts_test
+
+# capybara-screenshot
+screenshot_*
+
+# database dump from /bin scripts
+*.dump
+
+# locally compiled assets
+public/assets
+
+# Bower-installed assets
+vendor/assets/bower_components
+node_modules
+.bower
+
+# local uploads
+public/system
+
+# Client
+/public/packs
+/public/packs-test
+/node_modules

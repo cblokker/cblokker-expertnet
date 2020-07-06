@@ -1,0 +1,39 @@
+{
+  "name": "project",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@rails/webpacker": "3.5",
+    "babel-core": "^7.0.0-bridge",
+    "babel-loader": "^8.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "eslint": "^5.14.0",
+    "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.1.0",
+    "react-test-renderer": "^16.8.3",
+    "webpack-dev-server": "2.11.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/vendor/",
+      "/config/"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/javascript"
+    ]
+  }
+}
