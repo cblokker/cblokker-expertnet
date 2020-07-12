@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import CompaniesContainer from './CompaniesContainer'
 
 
@@ -10,12 +9,14 @@ class CompaniesPage extends React.Component {
     searchTerm: ''
   }
 
-  editSearchTerm = (e) => {
+  updateSearchTerm = (e) => {
     this.setState({searchTerm: e.target.value})
   }
 
-  dynamicSearch = () => {
-    return this.state.companies.filter(company => company.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+  filterCompaniesByName = () => {
+    return this.state.companies.filter(company => {
+      return company.name.trim().toLowerCase().includes(this.state.searchTerm.trim().toLowerCase())
+    })
   }
 
   render() {
@@ -34,14 +35,14 @@ class CompaniesPage extends React.Component {
             type='text'
             placeholder='Search for companies by title...'
             value={this.state.searchTerm}
-            onChange={this.editSearchTerm}
+            onChange={this.updateSearchTerm}
           />
           <select>
             <option value='' disabled selected>Filter by industry...</option>
           </select>
 
           <div className='well'>
-            <CompaniesContainer companies={this.dynamicSearch()}/>
+            <CompaniesContainer companies={this.filterCompaniesByName()}/>
           </div>
         </div>
       </div>

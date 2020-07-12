@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Company from './Company'
+
 
 class CompaniesContainer extends React.Component {
 	render() {
