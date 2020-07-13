@@ -5,6 +5,10 @@
       <%= link_to "Return Home", root_path, class: "btn btn-primary" %>
     </div>
     <div>
+      <%= will_paginate @experts %>
+      <p><%= @experts.length%> of <%= @experts.total_entries%></p>
+      
+
       <% @experts.in_groups_of(3) do |expert_row| %>
         <div class="row expert-row">
           <% expert_row.each do |expert| %>
@@ -24,6 +28,8 @@
           <% end %>
         </div>
       <% end %>
+
+      <%= will_paginate @experts %>
     </div>
   </div>
 </div>
