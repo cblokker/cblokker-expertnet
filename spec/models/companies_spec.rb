@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Company do
+describe Company, type: :model do
  describe "#full_photo_asset_path" do
   let!(:company) { create :company, photo_asset_path: "companies/company_1.png" }
   it "(example test) builds the path to the company logo" do

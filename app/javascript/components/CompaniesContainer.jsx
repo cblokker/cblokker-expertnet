@@ -4,15 +4,19 @@ import Company from './Company'
 
 
 class CompaniesContainer extends React.Component {
-	render() {
-		return (
-			<div class='row'>
-			  <div class='col-md-6'>
-			    {this.props.companies.map(company => <Company company={company}/>)}
-			  </div>
-			</div>
-		)
-	}
+  render() {
+    return (
+      <div className='row'>
+        {
+          this.props.companies.map(company => {
+            return <Company company={company}/>
+          })
+        }
+      </div>
+    )
+  } 
 }
 
 export default CompaniesContainer;
+
+

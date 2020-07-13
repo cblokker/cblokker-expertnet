@@ -1,0 +1,10 @@
+<div class="card expert-card" id="expert-<%= expert.id %>">
+  <%= image_tag expert.full_photo_asset_path, class: "card-img-top expert-img" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= expert.name %></h5>
+    <p class="card-text"><%= expert.title %></p>
+    <p class="card-text"><%= expert.biography %></p>
+    <% contact = expert.contacts.by_user(@current_user) %>
+    <%= contact_expert_button(contact, expert) %>
+  </div>
+</div>

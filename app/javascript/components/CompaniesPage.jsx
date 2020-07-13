@@ -41,26 +41,33 @@ class CompaniesPage extends React.Component {
             <h1 className='title'>First Round Companies</h1>
             <a href='/' className='btn btn-primary'>Return Home</a>
           </div>
-          <input
-            type='text'
-            placeholder='Search for companies by title...'
-            value={this.state.searchTerm}
-            onChange={this.updateSearchTerm}
-          />
-          <select value={this.state.selectedIndustry}
-                  onChange={this.updateSelectedIndustry}>
-            {
-              this.state.industries.map((industry) =>
-                <option
-                  key={industry.value}
-                  value={industry.value}>
-                  {industry}
-                </option>
-              )
-            }
-          </select>
 
-          <div className='well'>
+          <div className="form-row">
+            <div className="col-md-8">
+              <input
+                type='text'
+                className="form-control"
+                placeholder='Search for companies by title...'
+                value={this.state.searchTerm}
+                onChange={this.updateSearchTerm}
+              />
+            </div>
+            <div className="col-md-4">
+              <select value={this.state.selectedIndustry}
+                      onChange={this.updateSelectedIndustry}
+                      className="form-control">
+                {this.state.industries.map((industry) =>
+                  <option
+                    key={industry.value}
+                    value={industry.value}>
+                    {industry}
+                  </option>
+                )}
+              </select>
+            </div>
+          </div>
+
+          <div className='list-container'>
             <CompaniesContainer companies={this.filterCompaniesByNameAndIndusty()}/>
           </div>
         </div>

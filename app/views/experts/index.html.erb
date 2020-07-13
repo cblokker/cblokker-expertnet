@@ -4,32 +4,21 @@
       <h1>First Round Experts</h1>
       <%= link_to "Return Home", root_path, class: "btn btn-primary" %>
     </div>
-    <div>
-      <%= will_paginate @experts %>
-      <p><%= @experts.length%> of <%= @experts.total_entries%></p>
-      
 
-      <% @experts.in_groups_of(3) do |expert_row| %>
-        <div class="row expert-row">
-          <% expert_row.each do |expert| %>
-
-            <% if expert.present? %>
-              <div class="col-md-4">
-                <div class="card expert-card">
-                  <%= image_tag expert.photo_asset_path, class: "card-img-top expert-img" %>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= expert.name %></h5>
-                    <p class="card-text"><%= expert.title %></p>
-                    <div class="btn btn-primary">Contact</div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
+    <%= will_paginate @experts %>
+  
+    <% @experts.in_groups_of(3) do |expert_row| %>
+      <div class="row expert-row">
+        <% expert_row.each do |expert| %>
+          <% if expert.present? %>
+            <div class="col-md-4">
+              <%= render 'expert_card', expert: expert %>
+            </div>
           <% end %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+    <% end %>
 
-      <%= will_paginate @experts %>
-    </div>
+    <%= will_paginate @experts %>
   </div>
 </div>

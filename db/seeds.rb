@@ -13,7 +13,8 @@ experts = Array.new(50) do
     title: Faker::Job.title,
     company: Faker::Company.name,
     linkedin_url: "https://www.linkedin.com",
-    photo_asset_path: "experts/portrait_#{rand(1..7)}.jpeg"
+    photo_asset_path: "experts/portrait_#{rand(1..7)}.jpeg",
+    biography: Faker::Lorem.paragraph
   }
 end
 

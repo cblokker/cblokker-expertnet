@@ -2,4 +2,24 @@
   .title {
     color: #04c798;
   }
+
+  .list-container {
+    padding-top: 0px;
+  }
+
+ .card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .thumb-img {
+    object-fit: cover;
+    overflow: hidden;
+    height: 200px; 
+    width: 200px;
+  }
+
+  .card-companies {
+    margin-top: 20px;
+  }
 }
