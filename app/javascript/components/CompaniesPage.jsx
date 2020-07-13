@@ -6,24 +6,34 @@ import CompaniesContainer from './CompaniesContainer'
 class CompaniesPage extends React.Component {
   state = {
     companies: this.props.companies,
-    searchTerm: ''
+    industries: [...new Set([''].concat(this.props.companies.map(value => value.industry)))],
+    searchTerm: '',
+    selectedIndustry: ''
   }
 
   updateSearchTerm = (e) => {
     this.setState({searchTerm: e.target.value})
   }
 
-  filterCompaniesByName = () => {
+  updateSelectedIndustry = (e) => {
+    this.setState({selectedIndustry: e.target.value})
+  }
+
+  filterCompaniesByNameAndIndusty = () => {
     return this.state.companies.filter(company => {
-      return company.name.trim().toLowerCase().includes(this.state.searchTerm.trim().toLowerCase())
+      const nameFilter = company.name
+        .trim()
+        .toLowerCase()
+        .includes(this.state.searchTerm.trim().toLowerCase())
+
+      const IndustryFilter = company.industry
+        .includes(this.state.selectedIndustry)
+
+      return nameFilter && IndustryFilter
     })
   }
 
   render() {
-    // NOTE: `this.props.companies` holds all company data necessary
-    // for completing this portion of the assignment.
-    const prettyPrintCompanies = JSON.stringify(this.props.companies, null, 2);
-
     return (
       <div className='companies-index'>
         <div className='container'>
@@ -37,12 +47,21 @@ class CompaniesPage extends React.Component {
             value={this.state.searchTerm}
             onChange={this.updateSearchTerm}
           />
-          <select>
-            <option value='' disabled selected>Filter by industry...</option>
+          <select value={this.state.selectedIndustry}
+                  onChange={this.updateSelectedIndustry}>
+            {
+              this.state.industries.map((industry) =>
+                <option
+                  key={industry.value}
+                  value={industry.value}>
+                  {industry}
+                </option>
+              )
+            }
           </select>
 
           <div className='well'>
-            <CompaniesContainer companies={this.filterCompaniesByName()}/>
+            <CompaniesContainer companies={this.filterCompaniesByNameAndIndusty()}/>
           </div>
         </div>
       </div>
